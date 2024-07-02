@@ -68,7 +68,7 @@ const gallery = document.querySelector(".gallery");
 
 gallery.addEventListener("click", openImg);
 
-const imgItems = images
+const imgGallery = images
   .map(
     ({ preview, original, description }) =>
       ` <li class="gallery-item">
@@ -84,7 +84,7 @@ const imgItems = images
     </li>`
   )
   .join("");
-gallery.insertAdjacentHTML("beforeend", imgItems);
+gallery.insertAdjacentHTML("beforeend", imgGallery);
 
 function openImg(event) {
   event.preventDefault();
@@ -98,6 +98,7 @@ function openImg(event) {
   );
 
   instance.show();
+
   const pressEscape = (event) => {
     if (event.code === "Escape") {
       instance.close();
