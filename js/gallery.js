@@ -98,14 +98,4 @@ function openImg(event) {
   );
 
   instance.show();
-
-  const pressEscape = (event) => {
-    if (event.code === "Escape") {
-      instance.close();
-      document.removeEventListener("keydown", pressEscape);
-    }
-  };
-  if (instance.show()) {
-    document.addEventListener("keydown", pressEscape);
-  }
 }
